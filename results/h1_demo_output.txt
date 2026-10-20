@@ -1,0 +1,33 @@
+trial 0 light (2 req/s, util~0.43) open   n= 25 E2E p99 client=1.28s truth=1.28s
+trial 0 light (2 req/s, util~0.43) closed n= 25 E2E p99 client=1.28s truth=1.28s
+trial 0 high (4 req/s, util~0.86) open   n= 53 E2E p99 client=1.84s truth=1.84s
+trial 0 high (4 req/s, util~0.86) closed n= 53 E2E p99 client=1.28s truth=1.84s
+trial 0 overload (12 req/s, util~2.6) open   n=129 E2E p99 client=16.04s truth=16.04s
+trial 0 overload (12 req/s, util~2.6) closed n=129 E2E p99 client=1.29s truth=16.12s
+trial 1 light (2 req/s, util~0.43) open   n= 27 E2E p99 client=1.35s truth=1.35s
+trial 1 light (2 req/s, util~0.43) closed n= 27 E2E p99 client=1.26s truth=1.35s
+trial 1 high (4 req/s, util~0.86) open   n= 53 E2E p99 client=2.14s truth=2.14s
+trial 1 high (4 req/s, util~0.86) closed n= 53 E2E p99 client=1.26s truth=2.16s
+trial 1 overload (12 req/s, util~2.6) open   n=142 E2E p99 client=18.20s truth=18.20s
+trial 1 overload (12 req/s, util~2.6) closed n=142 E2E p99 client=1.27s truth=18.31s
+trial 2 light (2 req/s, util~0.43) open   n= 17 E2E p99 client=1.23s truth=1.23s
+trial 2 light (2 req/s, util~0.43) closed n= 17 E2E p99 client=1.23s truth=1.23s
+trial 2 high (4 req/s, util~0.86) open   n= 42 E2E p99 client=1.89s truth=1.89s
+trial 2 high (4 req/s, util~0.86) closed n= 42 E2E p99 client=1.26s truth=1.90s
+trial 2 overload (12 req/s, util~2.6) open   n=152 E2E p99 client=20.90s truth=20.90s
+trial 2 overload (12 req/s, util~2.6) closed n=152 E2E p99 client=1.29s truth=21.01s
+
+| scenario | client | metric | n/trial | client p50 | truth p50 | client p99 | truth p99 | p99 ratio client/truth (min..max over trials) |
+|---|---|---|---|---|---|---|---|---|
+| light (2 req/s, util~0.43) | open-loop | TTFT | 23 | 0.083s | 0.084s | 0.229s | 0.229s | 0.99 (0.98..1.00) |
+| light (2 req/s, util~0.43) | open-loop | E2E | 23 | 0.834s | 0.835s | 1.287s | 1.287s | 1.00 (1.00..1.00) |
+| light (2 req/s, util~0.43) | closed-loop | TTFT | 23 | 0.082s | 0.084s | 0.120s | 0.231s | 0.75 (0.27..1.00) |
+| light (2 req/s, util~0.43) | closed-loop | E2E | 23 | 0.834s | 0.835s | 1.256s | 1.288s | 0.98 (0.93..1.00) |
+| high (4 req/s, util~0.86) | open-loop | TTFT | 49 | 0.221s | 0.221s | 0.841s | 0.841s | 1.00 (1.00..1.00) |
+| high (4 req/s, util~0.86) | open-loop | E2E | 49 | 1.038s | 1.039s | 1.955s | 1.956s | 1.00 (1.00..1.00) |
+| high (4 req/s, util~0.86) | closed-loop | TTFT | 49 | 0.080s | 0.228s | 0.121s | 0.851s | 0.15 (0.11..0.18) |
+| high (4 req/s, util~0.86) | closed-loop | E2E | 49 | 0.825s | 1.047s | 1.265s | 1.967s | 0.65 (0.58..0.70) |
+| overload (12 req/s, util~2.6) | open-loop | TTFT | 141 | 8.589s | 8.589s | 17.570s | 17.570s | 1.00 (1.00..1.00) |
+| overload (12 req/s, util~2.6) | open-loop | E2E | 141 | 9.516s | 9.517s | 18.379s | 18.379s | 1.00 (1.00..1.00) |
+| overload (12 req/s, util~2.6) | closed-loop | TTFT | 141 | 0.085s | 8.639s | 0.124s | 17.667s | 0.01 (0.01..0.01) |
+| overload (12 req/s, util~2.6) | closed-loop | E2E | 141 | 0.837s | 9.567s | 1.285s | 18.480s | 0.07 (0.06..0.08) |

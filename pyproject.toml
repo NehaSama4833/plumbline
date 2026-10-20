@@ -3,7 +3,7 @@ name = "plumbline"
 version = "0.0.1"
 description = "Deterministic mock LLM server with ground-truth timings, for auditing benchmark clients"
 requires-python = ">=3.10"
-dependencies = []
+dependencies = ["fastapi", "uvicorn", "httpx"]
 
 [project.optional-dependencies]
 dev = ["pytest"]

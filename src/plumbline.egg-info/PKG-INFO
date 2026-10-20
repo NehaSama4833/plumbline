@@ -3,5 +3,8 @@ Name: plumbline
 Version: 0.0.1
 Summary: Deterministic mock LLM server with ground-truth timings, for auditing benchmark clients
 Requires-Python: >=3.10
+Requires-Dist: fastapi
+Requires-Dist: uvicorn
+Requires-Dist: httpx
 Provides-Extra: dev
 Requires-Dist: pytest; extra == "dev"
