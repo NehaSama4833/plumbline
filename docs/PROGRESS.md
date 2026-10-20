@@ -1,15 +1,15 @@
 # Progress
 
-**Current day:** 0 (planning)  
-**Release readiness:** not started
+**Scope:** one-day MVP (see PLAN.md). Larger ideas are future work.  
+**Status:** planned. No code, tests or results exist yet.  
+**Release readiness:** local only; publishing needs explicit approval.
 
-## Completed milestones (with evidence)
-- Local repository initialised, commit-msg hook blocks co-author trailers naming Claude or Anthropic. Evidence: `.githooks/commit-msg`.
-- 30-day plan written. Evidence: `docs/PLAN.md`.
+## Completed (with evidence)
+- Local repo with commit guard against co-author trailers naming Claude/Anthropic: `.githooks/commit-msg`.
+- MVP defined before coding: `docs/PLAN.md`.
 
-## Remaining milestones
-Everything else in `PLAN.md`. No code, tests or benchmarks exist yet.
+## Remaining
+All MVP items in PLAN.md.
 
 ## Blockers
-- Laptop details (CPU cores, OS) unknown; needed for the hardware log.
-- Not yet pushed anywhere; publishing waits for explicit release approval.
+Laptop CPU and OS unknown (needed for the hardware note in the README).
