@@ -21,3 +21,10 @@ Real tool adapters, arrival-shape experiments, llama.cpp validation, CI, handboo
 
 ## Known gaps
 Hardware note is for a 2-vCPU sandbox, not the user's laptop (specs still unknown).
+
+## Day 3 extension: GuideLLM 0.8.1 audit (2026-10-24)
+- Server: OpenAI-compatible endpoints, `/health`, clock offset in `/_truth`. Evidence: `src/plumbline/server.py`; Day 1 tests still pass.
+- Audit: `src/plumbline/audit_guidellm.py`, `audit_report.py`; 5 new unit tests (26 total passing).
+- Experiment: 2 trials x 3 scenarios, 760/760 requests matched. Raw: `results/guidellm_audit.json`, table: `results/guidellm_audit_table.txt`.
+- Findings (README): GuideLLM TTFT/ITL accurate to ~1 ms; a `max_concurrency` cap hides ~11.6 s of queueing from headline TTFT (disclosed separately as dispatch delay); TPOT is (last token - start)/N, ~10x ITL under queueing.
+- Not done: other tools (vllm bench, AIPerf, k6, Locust), tool-saturation rates, real model.

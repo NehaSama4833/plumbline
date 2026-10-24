@@ -1,0 +1,18 @@
+TTFT (seconds). 'sent' = truth measured from when the tool actually sent the request;
+'intended' = truth measured from when the tool's own schedule said to send it.
+
+| scenario | n/trial | tool p50 | truth(sent) p50 | tool p99 | truth(sent) p99 | truth(intended) p99 | tool dispatch delay p99 |
+|---|---|---|---|---|---|---|---|
+| light: constant 3 req/s | 74 | 0.022 | 0.022 | 0.047 | 0.046 | 0.049 | 0.007 |
+| overload, no cap: constant 12 req/s | 154 | 5.720 | 5.720 | 11.561 | 11.561 | 11.564 | 0.008 |
+| overload, capped: 12 req/s, max_concurrency=4 | 152 | 0.022 | 0.022 | 0.029 | 0.028 | 11.650 | 11.625 |
+
+ITL and TPOT (milliseconds, p50). Truth ITL = (last token - first token)/(N-1).
+
+| scenario | tool ITL | truth ITL | tool TPOT | TPOT / truth ITL |
+|---|---|---|---|---|
+| light: constant 3 req/s | 19.94 | 19.94 | 20.00 | 1.00x |
+| overload, no cap: constant 12 req/s | 19.99 | 19.99 | 198.40 | 9.93x |
+| overload, capped: 12 req/s, max_concurrency=4 | 19.99 | 19.99 | 20.04 | 1.00x |
+
+Matched 760 of 760 successful tool requests to server records.

@@ -1,0 +1,6 @@
+trial 0 light: constant 3 req/s: tool_ok=74 matched=74 TTFT p99 tool=0.049s truth(sent)=0.049s truth(intended)=0.050s
+trial 0 overload, no cap: constant 12 req/s: tool_ok=154 matched=154 TTFT p99 tool=11.613s truth(sent)=11.613s truth(intended)=11.616s
+trial 0 overload, capped: 12 req/s, max_concurrency=4: tool_ok=152 matched=152 TTFT p99 tool=0.029s truth(sent)=0.028s truth(intended)=11.617s
+trial 1 light: constant 3 req/s: tool_ok=74 matched=74 TTFT p99 tool=0.044s truth(sent)=0.044s truth(intended)=0.048s
+trial 1 overload, no cap: constant 12 req/s: tool_ok=153 matched=153 TTFT p99 tool=11.508s truth(sent)=11.508s truth(intended)=11.512s
+trial 1 overload, capped: 12 req/s, max_concurrency=4: tool_ok=153 matched=153 TTFT p99 tool=0.029s truth(sent)=0.028s truth(intended)=11.682s
