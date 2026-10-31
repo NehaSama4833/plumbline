@@ -1,6 +1,6 @@
 # Plumbline: one-day MVP
 
-Supersedes the earlier 30-day plan. Scope is fixed to one day. Anything not listed under MVP is future work, not scope.
+Scope is fixed to one day. Anything not listed under MVP is future work, not scope.
 
 ## Problem
 LLM benchmarking tools measure TTFT, inter-token latency and tail latency client-side, and NVIDIA's docs say such tools are not consistent in how they define and compute metrics. With a real model nobody knows the true values, so tool error cannot be measured.
